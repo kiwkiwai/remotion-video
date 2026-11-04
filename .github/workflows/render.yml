@@ -49,3 +49,4 @@ jobs:
           name: video
           path: Remotionvox/out/video.mp4
           retention-days: 7
+          
