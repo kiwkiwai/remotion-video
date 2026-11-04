@@ -3,10 +3,14 @@ name: Render Remotion
 on:
   workflow_dispatch:
     inputs:
-      composition:
-        description: "ID composition (sesuai VIDEOS di Root.tsx)"
+      folder:
+        description: "Folder proyek (Remotionfakta / Remotionvox)"
         required: true
-        default: "vox"
+        default: "Remotionfakta"
+      composition:
+        description: "ID composition (bab1, bab2, ... atau vox atau fakta)"
+        required: true
+        default: "bab1"
       scale:
         description: "Skala resolusi (0.5 = tes cepat, 1 = penuh)"
         required: true
@@ -14,11 +18,14 @@ on:
 
 jobs:
   render:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
     defaults:
       run:
-        working-directory: Remotionvox
+        working-directory: ${{ inputs.folder }}
+    env:
+      COMP: ${{ inputs.composition }}
+      SCALE: ${{ inputs.scale }}
     steps:
       - uses: actions/checkout@v4
 
@@ -38,14 +45,16 @@ jobs:
 
       - name: Render
         run: |
-          npx remotion render src/index.ts ${{ github.event.inputs.composition }} out/video.mp4 \
-            --scale=${{ github.event.inputs.scale }} \
+          npx remotion render src/index.ts "$COMP" "out/$COMP.mp4" \
+            --scale="$SCALE" \
             --concurrency=$(nproc) \
             --gl=angle
 
       - name: Upload hasil
         uses: actions/upload-artifact@v4
         with:
-          name: video
-          path: Remotionvox/out/video.mp4
+          name: video-${{ inputs.composition }}
+          path: ${{ inputs.folder }}/out/${{ inputs.composition }}.mp4
+          if-no-files-found: error
           retention-days: 7
+          
