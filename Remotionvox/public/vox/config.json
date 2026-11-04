@@ -1,0 +1,330 @@
+{
+  "theme": "misteri",
+  "voiceover": "vo.mp3",
+  "audio": {
+    "voiceVolume": 1,
+    "bgmVolume": 0.35,
+    "duck": 0.3,
+    "fadeIn": 1,
+    "fadeOut": 2
+  },
+  "sfx": [
+    {
+      "file": "sfx/subdroplow.wav",
+      "start": 0.05,
+      "volume": 0.3
+    },
+    {
+      "file": "sfx/cinematiclowhit.mp3",
+      "start": 6.13,
+      "volume": 0.5
+    },
+    {
+      "file": "sfx/clocktension.wav",
+      "start": 8.05,
+      "volume": 0.2
+    },
+    {
+      "file": "sfx/boom_hit.mp3",
+      "start": 16.05,
+      "volume": 0.5
+    },
+    {
+      "file": "sfx/mouseclick.mp3",
+      "start": 18.17,
+      "volume": 0.5
+    },
+    {
+      "file": "sfx/riser.mp3",
+      "start": 18.8,
+      "volume": 0.3
+    },
+    {
+      "file": "sfx/cinematicsubdrop.wav",
+      "start": 23.83,
+      "volume": 0.55
+    }
+  ],
+  "sfxOnTransition": "sfx/wooshone.wav",
+  "sfxOnTransitionVolume": 0.3,
+  "tail": 3,
+  "transitionFrames": 10,
+  "scenes": [
+    {
+      "start": 0,
+      "file": "sc1_hook.mp4",
+      "trimStart": 0,
+      "fit": "cover"
+    },
+    {
+      "start": 1.17,
+      "file": "sc2_shockwave.mp4",
+      "transition": "crossBlur",
+      "trimStart": 0,
+      "fit": "cover"
+    },
+    {
+      "start": 5.43,
+      "file": "sc3_nama.mp4",
+      "transition": "fade",
+      "trimStart": 0,
+      "fit": "cover"
+    },
+    {
+      "start": 9.31,
+      "file": "sc4_jarak.mp4",
+      "transition": "crossBlur",
+      "trimStart": 0,
+      "fit": "cover"
+    },
+    {
+      "start": 12.45,
+      "file": "sc5_semburan.mp4",
+      "transition": "glitch",
+      "trimStart": 0,
+      "fit": "cover"
+    },
+    {
+      "start": 17.15,
+      "file": "sc6_tanpa_disk.mp4",
+      "transition": "fade",
+      "trimStart": 0,
+      "fit": "cover"
+    },
+    {
+      "start": 20.53,
+      "file": "sc7_magnet.mp4",
+      "transition": "crossBlur",
+      "trimStart": 0,
+      "fit": "cover"
+    },
+    {
+      "start": 23.05,
+      "file": "sc8_misteri.mp4",
+      "transition": "crossBlur",
+      "trimStart": 0,
+      "fit": "cover"
+    }
+  ],
+  "effects": [
+    "colorGrade",
+    "grain",
+    "dust",
+    "vignette"
+  ],
+  "grade": "cold",
+  "gradeIntensity": 0.35,
+  "grainAmount": 0.12,
+  "fx": [
+    {
+      "type": "blurIn",
+      "start": 0.05
+    },
+    {
+      "type": "bokeh",
+      "start": 1.17,
+      "end": 5.43
+    },
+    {
+      "type": "marker",
+      "shape": "underline",
+      "x": 50,
+      "y": 34,
+      "width": 62,
+      "height": 3,
+      "color": "#F2D14B",
+      "thickness": 8,
+      "start": 7.4,
+      "end": 9.17
+    },
+    {
+      "type": "dim",
+      "amount": 0.35,
+      "start": 15.25,
+      "end": 16.05
+    },
+    {
+      "type": "zoomPunch",
+      "start": 16.05
+    },
+    {
+      "type": "spotlight",
+      "x": 50,
+      "y": 33.3,
+      "radius": 330,
+      "amount": 0.55,
+      "start": 17.6,
+      "end": 19.6
+    },
+    {
+      "type": "marker",
+      "shape": "cross",
+      "x": 50,
+      "y": 33.3,
+      "width": 72,
+      "height": 12,
+      "color": "#D1342F",
+      "thickness": 12,
+      "start": 18.17,
+      "end": 19.9
+    },
+    {
+      "type": "marker",
+      "shape": "circle",
+      "x": 46.3,
+      "y": 52,
+      "width": 28,
+      "height": 12,
+      "color": "#F2D14B",
+      "thickness": 8,
+      "start": 21.99,
+      "end": 23.05
+    },
+    {
+      "type": "rgbSplit",
+      "start": 23.83
+    },
+    {
+      "type": "stamp",
+      "text": "BELUM TERPECAHKAN",
+      "x": 50,
+      "y": 52,
+      "size": 76,
+      "rotate": -6,
+      "color": "#F2D14B",
+      "start": 25.11,
+      "end": 26
+    }
+  ],
+  "hook": {
+    "text": "Bintang Mati Ini Melakukan Sesuatu yang Mustahil!",
+    "start": 0.05,
+    "end": 3.2,
+    "size": 74,
+    "animation": "pop"
+  },
+  "extraText": [
+    {
+      "type": "title",
+      "text": "RXJ0528+2838",
+      "start": 6.13,
+      "end": 9.31,
+      "y": 30,
+      "size": 100
+    },
+    {
+      "type": "bigNumber",
+      "text": "730",
+      "countTo": 730,
+      "countFrom": 0,
+      "countDuration": 0.9,
+      "start": 10.03,
+      "end": 12.45,
+      "x": 22,
+      "y": 52,
+      "size": 230,
+      "color": "#F2D14B"
+    },
+    {
+      "type": "label",
+      "text": "tahun cahaya",
+      "start": 10.57,
+      "end": 12.45,
+      "x": 22,
+      "y": 59,
+      "size": 56,
+      "line": {
+        "color": "#F2D14B",
+        "thickness": 4,
+        "length": 160,
+        "position": "top",
+        "end": "none"
+      }
+    },
+    {
+      "type": "label",
+      "text": "BUMI",
+      "start": 11.67,
+      "end": 12.45,
+      "x": 66,
+      "y": 62,
+      "size": 52,
+      "line": {
+        "color": "#F2D14B",
+        "thickness": 4,
+        "length": 100,
+        "position": "top",
+        "end": "dot"
+      }
+    },
+    {
+      "type": "bigNumber",
+      "text": "1000",
+      "countTo": 1000,
+      "countFrom": 0,
+      "countDuration": 0.8,
+      "separator": ".",
+      "suffix": " tahun",
+      "start": 16.05,
+      "end": 17.15,
+      "x": 50,
+      "y": 47,
+      "size": 150,
+      "color": "#F2D14B"
+    },
+    {
+      "type": "label",
+      "text": "Medan magnet",
+      "start": 21.55,
+      "end": 23.05,
+      "x": 50,
+      "y": 20,
+      "size": 60,
+      "line": {
+        "color": "#F2D14B",
+        "thickness": 4,
+        "length": 140,
+        "position": "bottom",
+        "end": "dot"
+      }
+    }
+  ],
+  "highlight": [
+    {
+      "word": "gelombang",
+      "type": "stabilo"
+    },
+    {
+      "word": "misterius",
+      "type": "glow"
+    },
+    {
+      "word": "730",
+      "type": "lingkaran"
+    },
+    {
+      "word": "seribu",
+      "type": "glow"
+    },
+    {
+      "word": "piringan",
+      "type": "garis bawah"
+    },
+    {
+      "word": "magnet",
+      "type": "stabilo"
+    }
+  ],
+  "subtitle": {
+    "style": "pop"
+  },
+  "outro": {
+    "text": "Apa teorimu?",
+    "sub": "Komen & follow untuk misteri semesta berikutnya",
+    "start": 26
+  },
+  "progressBar": {
+    "color": "#D1342F",
+    "height": 8
+  }
+}
