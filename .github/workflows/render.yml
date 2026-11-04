@@ -3,10 +3,14 @@ name: Render Remotion
 on:
   workflow_dispatch:
     inputs:
-      composition:
-        description: "ID composition (sesuai VIDEOS di Root.tsx)"
+      project:
+        description: "Folder proyek (Remotionvox / Remotionfacts)"
         required: true
-        default: "vox"
+        default: "Remotionfacts"
+      composition:
+        description: "ID composition (vox / bab1, bab2, ...)"
+        required: true
+        default: "bab1"
       scale:
         description: "Skala resolusi (0.5 = tes cepat, 1 = penuh)"
         required: true
@@ -18,35 +22,29 @@ jobs:
     timeout-minutes: 60
     defaults:
       run:
-        working-directory: Remotionvox
+        working-directory: ${{ github.event.inputs.project }}
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Install library sistem untuk Chromium
         run: |
           sudo apt-get update
           sudo apt-get install -y libnss3 libdbus-1-3 libatk1.0-0 libasound2t64 \
             libxrandr2 libxkbcommon-dev libxfixes3 libxcomposite1 libxdamage1 \
             libatk-bridge2.0-0 libpango-1.0-0 libcairo2 libcups2
-
       - name: Install dependency
         run: npm install
-
       - name: Render
         run: |
           npx remotion render src/index.ts ${{ github.event.inputs.composition }} out/video.mp4 \
             --scale=${{ github.event.inputs.scale }} \
             --concurrency=$(nproc) \
             --gl=angle
-
       - name: Upload hasil
         uses: actions/upload-artifact@v4
         with:
-          name: video
-          path: Remotionvox/out/video.mp4
+          name: video-${{ github.event.inputs.composition }}
+          path: ${{ github.event.inputs.project }}/out/video.mp4
           retention-days: 7
-          
